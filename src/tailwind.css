@@ -71,99 +71,99 @@ editor-squiggler {
 }
 
 @layer base {
-    body:not(.reset) {
+    body:where(:not(.reset)) {
         @apply bg-white dark:bg-primary-800;
     }
 
-    h1:not(.reset) {
+    h1:where(:not(.reset)) {
         @apply asH1
     }
 
-    h2:not(.reset) {
+    h2:where(:not(.reset)) {
         @apply asH2
     }
 
-    h3:not(.reset) {
+    h3:where(:not(.reset)) {
         @apply asH3
     }
 
-    h4:not(.reset) {
+    h4:where(:not(.reset)) {
         @apply asH4
     }
 
-    h5:not(.reset) {
+    h5:where(:not(.reset)) {
         @apply asH5
     }
 
-    li:not(.reset) {
+    li:where(:not(.reset)) {
         @apply asLi
     }
 
-    p:not(.reset) {
+    p:where(:not(.reset)) {
         @apply asP
     }
 
-    ul:not(.reset) {
+    ul:where(:not(.reset)) {
         @apply asUl
     }
 
-    ol:not(.reset) {
+    ol:where(:not(.reset)) {
         @apply asOl
     }
 
-    ul ul:not(.reset) {
+    ul ul:where(:not(.reset)) {
         list-style-type: circle;
     }
 
-    input:not(.reset) {
+    input:where(:not(.reset)) {
         @apply asInput;
     }
 
-    button:not(.reset) {
+    button:where(:not(.reset)) {
         @apply asButton
     }
 
-    label:not(.reset) {
+    label:where(:not(.reset)) {
         @apply asLabel
     }
 
-    input[type=text]:not(.reset) {
+    input[type=text]:where(:not(.reset)) {
         @apply asTextInput
     }
 
-    input[type=email]:not(.reset) {
+    input[type=email]:where(:not(.reset)) {
         @apply asTextInput
     }
 
-    input[type=password]:not(.reset) {
+    input[type=password]:where(:not(.reset)) {
         @apply asTextInput
     }
 
-    input[type=url]:not(.reset) {
+    input[type=url]:where(:not(.reset)) {
         @apply asTextInput
     }
 
-    input[type=search]:not(.reset) {
+    input[type=search]:where(:not(.reset)) {
         @apply asTextInput
     }
 
-    input[type=button]:not(.reset) {
+    input[type=button]:where(:not(.reset)) {
         @apply asButton
     }
 
-    input[type=reset]:not(.reset) {
+    input[type=reset]:where(:not(.reset)) {
         @apply asButton
     }
 
-    input[type=submit]:not(.reset) {
+    input[type=submit]:where(:not(.reset)) {
         @apply asButton
     }
 
-    figcaption:not(.reset) {
+    figcaption:where(:not(.reset)) {
         @apply asFigCaption
     }
 
-    a:not(.reset) {
+    a:where(:not(.reset)) {
         @apply asLink
     }
 
