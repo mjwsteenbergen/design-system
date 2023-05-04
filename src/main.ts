@@ -88,7 +88,7 @@ const divs = Object.entries(theme.colors).map(i => {
     return Object.keys(value).map(j => name + "-" + j)
   }
   return undefined
-}).filter(i => i).map(i => `<div>${i.map(j => `<div class="bg-${j} p-6">${j}</div>`).reduce((p,n) => p+n)}</div>`)
+}).filter(i => i).map(i => `<div>${i?.map(j => `<div class="bg-${j} p-6">${j}</div>`).reduce((p,n) => p+n)}</div>`)
 
 const wrapper = document.getElementById("colors");
 
