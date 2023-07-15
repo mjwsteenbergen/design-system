@@ -11,15 +11,15 @@ editor-squiggler {
   }
 
   .asH1 {
-    @apply font-title font-bold text-3xl mt-3 mb-3 text-black-900 dark:text-white;
+    @apply font-title font-bold text-6xl mt-3 mb-3 text-red-600 dark:text-white;
   }
 
   .asH2 {
-    @apply font-heading font-bold text-2xl mt-3 mb-3 text-black-900 dark:text-white;
+    @apply font-heading font-bold text-4xl mt-3 mb-3 text-black-900 dark:text-white;
   }
 
   .asH3 {
-    @apply font-heading font-bold text-xl mt-3 mb-3 text-black-900 dark:text-white;
+    @apply font-heading font-bold text-2xl mt-3 mb-3 text-black-900 dark:text-white;
   }
 
   .asH4 {
@@ -84,7 +84,7 @@ editor-squiggler {
 
 @layer base {
   body:where(:not(.reset)) {
-    @apply bg-white dark:bg-black-900;
+    @apply bg-white dark:bg-black-900 text-lg;
   }
 
   h1:where(:not(.reset)) {
