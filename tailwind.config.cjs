@@ -316,8 +316,9 @@ module.exports = {
       ...convertPalettteToTailwind(colors)
     },
     fontFamily: {
-      sans: ['Inter', "Arial", "Helvetica", "sans-serif"],
-      serif: ['Geometria', 'Geometria-light', "serif"],
+      title: ['SuperiorTitle', "serif"],
+      heading: ['Geologica', "serif"],
+      body: ['Inter', "Arial", "Helvetica", "sans-serif"],
     },
     screens: {
       'sm': '640px',
