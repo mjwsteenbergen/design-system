@@ -62,7 +62,7 @@ editor-squiggler {
   }
 
   .asButton.secondary {
-    @apply bg-primary-50 border-primary-50 font-normal text-base text-black-900 transition-colors hover:border-primary-100;
+    @apply bg-primary-50 border-primary-50 font-normal text-base text-white transition-colors hover:border-primary-100;
   }
 
   .asButton.tertiary {
@@ -84,7 +84,7 @@ editor-squiggler {
 
 @layer base {
   body:where(:not(.reset)) {
-    @apply bg-white dark:bg-black-900 text-lg;
+    @apply bg-white dark:bg-black-900 text-lg font-body;
   }
 
   h1:where(:not(.reset)) {
