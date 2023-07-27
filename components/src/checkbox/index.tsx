@@ -13,7 +13,7 @@ export const Checkbox = ({ classname, ...rest }: Props) => {
     <>
       <RCheckbox.Root
         className={
-          'reset border-2 border-black-900 p-1 flex justify-center items-stretch ' +
+          'reset border-2 border-black-900 dark:border-white p-1 flex justify-center items-stretch ' +
           (classname ?? 'h-10 w-10')
         }
         {...rest}
