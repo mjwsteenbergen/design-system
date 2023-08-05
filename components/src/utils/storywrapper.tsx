@@ -1,8 +1,31 @@
-import { Decorator } from "@storybook/react"
-import { PropsWithChildren } from "react"
+import { Decorator } from "@storybook/react";
+import { cva } from "class-variance-authority";
 
-export const StoryWrapper: Decorator = (Story) => <StoryWrapperComp><Story /></StoryWrapperComp>
+const variants = cva({
+  variants: {
+    bgGrey: {
+      true: "bg-black-200",
+    },
+  },
+});
 
-const StoryWrapperComp = ({ children }: PropsWithChildren<any>) => {
-    return <div className="flex items-center justify-center w-screen h-screen"><div className="max-w-2xl">{children}</div></div>
-}
+type Props = {
+  bgGrey?: boolean;
+};
+
+export const StoryWrapper = (props?: Props): Decorator => {
+  return (Story) => {
+    return (
+      <div
+        className={variants({
+          ...props,
+          className: "flex items-center justify-center w-screen h-screen ",
+        })}
+      >
+        <div className="max-w-2xl">
+          <Story />
+        </div>
+      </div>
+    );
+  };
+};
