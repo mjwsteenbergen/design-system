@@ -62,7 +62,7 @@ editor-squiggler {
   }
 
   .asButton.secondary {
-    @apply bg-primary-50 border-primary-50 font-normal text-base text-white transition-colors hover:border-primary-100;
+    @apply bg-black-400 border-black-400 font-normal text-base text-white transition-colors hover:border-black-600 hover:bg-black-600;
   }
 
   .asButton.tertiary {
