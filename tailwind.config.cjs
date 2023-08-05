@@ -335,5 +335,8 @@ module.exports = {
         primary: convertPalettteToTailwind(colors).red,
       }
     }
-  }
+  },
+  plugins: [
+		require("tailwindcss-animate"),
+	],
 }
