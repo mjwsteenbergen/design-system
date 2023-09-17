@@ -66,7 +66,7 @@ DialogContent.displayName = DialogPrimitive.Content.displayName;
 
 export const DialogClose = DialogPrimitive.Close;
 DialogClose.defaultProps = {
-  className: "reset",
+  type: undefined,
 };
 
 const DialogHeader = ({
