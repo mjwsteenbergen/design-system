@@ -19,14 +19,16 @@ const variant = cva("", {
 
 type Props = PropsWithChildren<VariantProps<typeof variant>> & {
   className?: string;
+  disabled?: boolean;
 } & Pick<React.ButtonHTMLAttributes<HTMLButtonElement>, "onClick">;
 
 export const Button = forwardRef<HTMLButtonElement, Props>(
-  ({ className, appearance, rounded, children, ...rest }, ref) => {
+  ({ className, appearance, rounded, children, disabled, ...rest }, ref) => {
     return (
       <button
         className={variant({ className, appearance, rounded })}
         ref={ref}
+        disabled={disabled}
         {...rest}
       >
         {children}
