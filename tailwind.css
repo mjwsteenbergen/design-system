@@ -70,7 +70,7 @@ editor-squiggler {
   }
 
   .asLink {
-    @apply decoration-gray-300 decoration-2 hover:bg-gray-50 dark:decoration-gray-300 dark:hover:bg-gray-500 decoration-solid cursor-pointer underline;
+    @apply text-black-900 dark:text-white decoration-gray-300 decoration-2 hover:bg-gray-50 dark:decoration-gray-300 dark:hover:bg-gray-500 decoration-solid cursor-pointer underline;
   }
 
   .asLabel {
@@ -177,6 +177,10 @@ editor-squiggler {
 
   a:where(:not(.reset)) {
     @apply asLink;
+  }
+
+  th:where(:not(.reset)) {
+    @apply asP;
   }
 
 
