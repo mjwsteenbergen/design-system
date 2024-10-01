@@ -316,7 +316,8 @@ module.exports = {
     accentColor: '#b40000',
     colors: {
       ...baseColors,
-      ...convertPalettteToTailwind(colors)
+      ...convertPalettteToTailwind(colors),
+      primary: convertPalettteToTailwind(colors).red,
     },
     fontFamily: {
       title: ['SuperiorTitle', "serif"],
@@ -332,11 +333,6 @@ module.exports = {
       '3xl': '1920px',
       '4xl': '2560px',
       '5xl': '3840px',
-    },
-    extend: {
-      colors: {
-        primary: convertPalettteToTailwind(colors).red,
-      }
     }
   },
 }

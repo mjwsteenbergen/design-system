@@ -1,27 +1,18 @@
 import * as RadixDialog from "@radix-ui/react-dialog";
 
-type Props = RadixDialog.DialogProps & {
-  classname?: string;
-};
-
 ("use client");
 
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
-import { Cancel } from "iconoir-react";
+import { Xmark } from "iconoir-react";
 
 const Dialog = DialogPrimitive.Root;
 
 const DialogTrigger = DialogPrimitive.Trigger;
-DialogTrigger.defaultProps = {
-  className: "reset",
-};
+DialogTrigger.defaultProps = {};
 
-const DialogPortal = ({
-  className,
-  ...props
-}: DialogPrimitive.DialogPortalProps) => (
-  <DialogPrimitive.Portal className={className} {...props} />
+const DialogPortal = ({ ...props }: DialogPrimitive.DialogPortalProps) => (
+  <DialogPrimitive.Portal {...props} />
 );
 DialogPortal.displayName = DialogPrimitive.Portal.displayName;
 
@@ -49,14 +40,14 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={
-        "fixed max-sm:rounded-t-md max-sm:w-screen max-sm:min-h-[calc(100vh-6rem)] max-sm:left-0 max-sm:bottom-0 sm:left-[50%] sm:bottom-[50%] z-50 grid content-start w-full sm:max-w-lg sm:translate-x-[-50%] gap-4 bg-white dark:bg-black-800 p-6 shadow-lg max-sm:data-[state=closed]:animate-out max-sm:data-[state=closed]:slide-out-to-bottom max-sm:data-[state=open]:animate-in max-sm:data-[state=open]:slide-in-from-bottom sm:rounded-lg md:w-full" +
+        "fixed max-sm:rounded-t-md max-sm:w-screen max-sm:min-h-[calc(100vh-6rem)] max-sm:left-0 max-sm:bottom-0 sm:left-[50%] sm:bottom-[50%] z-50 grid content-start w-full sm:max-w-lg sm:max-h-[calc(100vh-1rem)] sm:overflow-y-auto sm:translate-x-[-50%] sm:translate-y-[50%] gap-4 bg-white dark:bg-black-800 p-6 shadow-lg max-sm:data-[state=closed]:animate-out max-sm:data-[state=closed]:slide-out-to-bottom max-sm:data-[state=open]:animate-in max-sm:data-[state=open]:slide-in-from-bottom sm:rounded-lg md:w-full" +
         className
       }
       {...props}
     >
       {children}
       <DialogPrimitive.Close className="reset absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-        <Cancel />
+        <Xmark />
         <span className="sr-only">Close</span>
       </DialogPrimitive.Close>
     </DialogPrimitive.Content>
