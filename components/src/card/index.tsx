@@ -3,7 +3,7 @@ import { PropsWithChildren, ReactElement, ReactNode } from "react";
 
 type Props = {
   header?: ReactNode;
-  content: ReactElement;
+  content: ReactElement<any, any>;
   contained?: boolean;
 };
 
@@ -32,10 +32,10 @@ export const Card = ({
   ...rest
 }: PropsWithChildren<
   Props &
-    React.DetailedHTMLProps<
+    Omit<React.DetailedHTMLProps<
       React.HTMLAttributes<HTMLDivElement>,
       HTMLDivElement
-    >
+    >, "content">
 >) => {
   return (
     <div {...rest} className={variants({ contained, className })}>

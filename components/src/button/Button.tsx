@@ -40,25 +40,31 @@ export const Button = forwardRef<HTMLButtonElement, Props>(
         disabled={disabled}
         {...rest}
       >
-        <div
-          className={
-            "block w-full transition-all " +
-            (isLoading ? "translate-x-[-200%]" : "")
-          }
-        >
-          {children}
-        </div>
+        {isLoading === undefined ? (
+          children
+        ) : (
+          <>
+            <div
+              className={
+                "block w-full transition-all " +
+                (isLoading ? "translate-x-[-200%]" : "")
+              }
+            >
+              {children}
+            </div>
 
-        <div
-          className={
-            "absolute transition-all left-1/2 top-1/2 -translate-y-1/2 " +
-            (isLoading ? "-translate-x-1/2" : "left-full translate-x-full")
-          }
-        >
-          <div className="animate-spin">
-            <Asterisk />
-          </div>
-        </div>
+            <div
+              className={
+                "absolute transition-all left-1/2 top-1/2 -translate-y-1/2 " +
+                (isLoading ? "-translate-x-1/2" : "left-full translate-x-full")
+              }
+            >
+              <div className="animate-spin">
+                <Asterisk />
+              </div>
+            </div>
+          </>
+        )}
       </button>
     );
   }

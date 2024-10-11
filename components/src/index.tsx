@@ -21,7 +21,7 @@ export {
   CommandItem,
   CommandShortcut,
   CommandSeparator,
-} from "./Command";
+} from "./command";
 
 export { Popover, PopoverTrigger, PopoverContent } from "./popover";
 
@@ -51,8 +51,4 @@ export {
   SelectScrollDownButton,
 } from "./select";
 
-export {
-  FormSelect,
-  FormTextInput,
-  useValidatedForm
-} from "./form/form"
+export { FormSelect, FormTextInput, useValidatedForm } from "./form/form";

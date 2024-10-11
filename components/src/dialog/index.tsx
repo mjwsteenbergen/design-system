@@ -1,7 +1,3 @@
-import * as RadixDialog from "@radix-ui/react-dialog";
-
-("use client");
-
 import * as React from "react";
 import * as DialogPrimitive from "@radix-ui/react-dialog";
 import { Xmark } from "iconoir-react";

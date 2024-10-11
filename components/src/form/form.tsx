@@ -89,7 +89,7 @@ export const FormSelect = (
 export const FormFileInput = forwardRef<
   HTMLInputElement,
   InputHTMLAttributes<HTMLInputElement> & { name: string }
->((props, ref) => {
+>((props) => {
   const { control } = useFormContext();
   const { field } = useController({ name: props.name, control });
 
