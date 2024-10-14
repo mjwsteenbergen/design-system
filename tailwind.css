@@ -7,31 +7,31 @@
   }
 
   .asH1 {
-    @apply font-title font-bold text-6xl mt-3 mb-3 text-primary-600 dark:text-white;
+    @apply font-title font-bold text-6xl mt-3 mb-3 text-neutral-text-high;
   }
 
   .asH2 {
-    @apply font-heading font-bold text-4xl mt-3 mb-3 text-black-900 dark:text-white;
+    @apply font-heading font-bold text-4xl mt-3 mb-3 text-neutral-text-high;
   }
 
   .asH3 {
-    @apply font-heading font-bold text-2xl mt-3 mb-3 text-black-900 dark:text-white;
+    @apply font-heading font-bold text-2xl mt-3 mb-3 text-neutral-text-high;
   }
 
   .asH4 {
-    @apply font-heading font-bold mt-3 mb-3 text-black-900 dark:text-white;
+    @apply font-heading font-bold mt-3 mb-3 text-neutral-text-high;
   }
 
   .asH5 {
-    @apply font-heading mt-3 mb-3 text-black-900 dark:text-white;
+    @apply font-heading mt-3 mb-3 text-neutral-text-high;
   }
 
   .asP {
-    @apply mt-1 mb-1 text-black-900 dark:text-white;
+    @apply mt-1 mb-1 text-neutral-text-high;
   }
 
   .asLi {
-    @apply list-item text-black-900 dark:text-white;
+    @apply list-item text-neutral-text-high;
   }
 
   .asOl {
@@ -43,49 +43,211 @@
   }
 
   .asInput {
-    @apply text-black-900 dark:text-white;
+    @apply text-neutral-text-high;
   }
 
   .asTextInput {
-    @apply outline-none focus:border-gray-500 rounded-md pl-2 pr-2 pt-1 pb-1 border-gray-50 border-2 max-sm:min-w-full bg-transparent;
+    /*  */
+    @apply outline-none rounded-md pl-2 pr-2 pt-1 pb-1 border-2 max-sm:min-w-full 
+      bg-neutral-background-interactive-default border-neutral-border-high
+      hover:bg-neutral-background-interactive-hover hover:border-primary-border-interactive-hover
+      focus:focus-visible:bg-neutral-background-interactive-default focus:focus-visible:border-primary-border-interactive-active
+      disabled:bg-neutral-background-interactive-disabled disabled:border-neutral-border-interactive-disabled;
   }
 
   .asButton {
-    @apply text-white  border-4
-            
-            disabled:bg-primary-300 disabled:border-primary-300 disabled:text-black-900 disabled:cursor-auto
+    /* disabled:bg-primary-300 disabled:border-primary-300 disabled:text-black-900 */
+    @apply text-primary-text-interactive-default border-4
+            disabled:cursor-auto disabled:bg-neutral-background-interactive-disabled disabled:text-neutral-text-interactive-disabled
             shadow active:shadow-none transition-colors
             px-3 py-2 rounded-md text-base font-semibold cursor-pointer m-0.5;
   }
 
   .asButton:not(.secondary):not(.tertiary) {
-    @apply bg-primary-600 hover:border-primary-500 active:bg-primary-600 border-primary-600 active:border-primary-600
+    /* bg-primary-600 hover:border-primary-500 active:bg-primary-600 border-primary-600 active:border-primary-600 */
+    @apply text-primary-text-interactive-default 
+      bg-primary-background-interactive-default border-primary-border-interactive-default
+      hover:bg-primary-background-interactive-hover hover:border-primary-border-interactive-hover
+      active:bg-primary-background-interactive-active;
   }
 
   .asButton.secondary {
-    @apply bg-black-400 border-black-400 font-normal text-base text-white hover:border-black-600 ;
+    /* bg-black-400 border-black-400 text-white hover:border-black-600*/
+    @apply font-normal text-base  ;
   }
 
   .asButton.tertiary {
-    @apply bg-transparent text-primary-700 dark:text-white;
+    /* text-primary-700 dark:text-white */
+    @apply text-neutral-text-high
+      bg-neutral-background-interactive-default border-neutral-border-medium
+      hover:border-primary-border-interactive-hover
+      focus:focus-visible:bg-neutral-background-interactive-default focus:focus-visible:border-primary-border-interactive-active
+      disabled:bg-neutral-background-interactive-disabled disabled:border-neutral-border-interactive-disabled
+      active:bg-primary-background-interactive-active;
+
   }
 
   .asLink {
-    @apply text-black-900 dark:text-white decoration-gray-300 decoration-2 hover:bg-gray-50 dark:decoration-gray-300 dark:hover:bg-gray-500 decoration-solid cursor-pointer underline;
+    @apply text-neutral-text-high decoration-neutral-background-medium hover:bg-neutral-background-interactive-hover decoration-2 decoration-solid cursor-pointer underline;
   }
 
   .asLabel {
-    @apply text-black-900 dark:text-white;
+    @apply text-neutral-text-medium;
   }
 
   .asFigCaption {
-    @apply text-black-900 dark:text-white italic tracking-tight;
+    @apply text-neutral-text-high italic tracking-tight;
   }
 }
 
 @layer base {
+  /* START | Generated functional colors */
+  :root {
+    --colors-transparent: transparent;
+    --colors-neutral-background-low: #FCFCFC;
+    --colors-neutral-background-medium: #7D7D87;
+    --colors-neutral-background-interactive-default: #FCFCFC;
+    --colors-neutral-background-interactive-disabled: #CECECF;
+    --colors-neutral-background-interactive-hover: #CECECF;
+    --colors-neutral-text-high: purple;
+    --colors-neutral-text-medium: purple;
+    --colors-neutral-text-inverse: purple;
+    --colors-neutral-text-light-onbackground: purple;
+    --colors-neutral-text-dark-onbackground: purple;
+    --colors-neutral-text-interactive-disabled: purple;
+    --colors-neutral-border-high: purple;
+    --colors-neutral-border-medium: purple;
+    --colors-neutral-border-low: purple;
+    --colors-neutral-border-interactive-disabled: purple;
+    --colors-primary-background-high: purple;
+    --colors-primary-background-medium: purple;
+    --colors-primary-background-low: purple;
+    --colors-primary-background-interactive-default: purple;
+    --colors-primary-background-interactive-hover: purple;
+    --colors-primary-background-interactive-active: purple;
+    --colors-primary-text-high: purple;
+    --colors-primary-text-interactive-default: purple;
+    --colors-primary-text-interactive-hover: purple;
+    --colors-primary-text-interactive-active: purple;
+    --colors-primary-border-high: purple;
+    --colors-primary-border-interactive-default: purple;
+    --colors-primary-border-interactive-hover: purple;
+    --colors-primary-border-interactive-active: purple;
+    --colors-accent1-background-high: purple;
+    --colors-accent1-background-medium: purple;
+    --colors-accent1-background-low: purple;
+    --colors-accent1-background-interactive-default: purple;
+    --colors-accent1-background-interactive-hover: purple;
+    --colors-accent1-background-interactive-active: purple;
+    --colors-accent1-text-high: purple;
+    --colors-accent1-border-high: purple;
+    --colors-accent2-background-high: purple;
+    --colors-accent2-background-medium: purple;
+    --colors-accent2-background-low: purple;
+    --colors-accent3-background-high: purple;
+    --colors-accent3-background-medium: purple;
+    --colors-accent3-background-low: purple;
+    --colors-accent3-background-interactive-default: purple;
+    --colors-accent3-text-high: purple;
+    --colors-accent3-border-high: purple;
+    --colors-accent2-text-high: purple;
+    --colors-accent2-border-high: purple;
+    --backgroundColor-current: currentColor;
+    --backgroundColor-transparent: transparent;
+    --backgroundColor-neutral-background-low: #FCFCFC;
+    --backgroundColor-neutral-background-medium: #7D7D87;
+    --backgroundColor-neutral-background-interactive-default: #FCFCFC;
+    --backgroundColor-neutral-background-interactive-disabled: #CECECF;
+    --backgroundColor-neutral-background-interactive-hover: #CECECF;
+    --backgroundColor-primary-background-high: #502424;
+    --backgroundColor-primary-background-medium: #691919;
+    --backgroundColor-primary-background-low: #EC6A6A;
+    --backgroundColor-primary-background-interactive-default: #9B0000;
+    --backgroundColor-primary-background-interactive-hover: #691919;
+    --backgroundColor-primary-background-interactive-active: #820C0C;
+    --backgroundColor-accent1-background-high: purple;
+    --backgroundColor-accent1-background-medium: purple;
+    --backgroundColor-accent1-background-low: purple;
+    --backgroundColor-accent1-background-interactive-default: purple;
+    --backgroundColor-accent1-background-interactive-hover: purple;
+    --backgroundColor-accent1-background-interactive-active: purple;
+    --backgroundColor-accent2-background-high: purple;
+    --backgroundColor-accent2-background-medium: purple;
+    --backgroundColor-accent2-background-low: purple;
+    --backgroundColor-accent3-background-high: purple;
+    --backgroundColor-accent3-background-medium: purple;
+    --backgroundColor-accent3-background-low: purple;
+    --backgroundColor-accent3-background-interactive-default: purple;
+    --textColor-current: currentColor;
+    --textColor-transparent: transparent;
+    --textColor-neutral-text-high: #000000;
+    --textColor-neutral-text-medium: #313131;
+    --textColor-neutral-text-inverse: purple;
+    --textColor-neutral-text-light-onbackground: purple;
+    --textColor-neutral-text-dark-onbackground: purple;
+    --textColor-neutral-text-interactive-disabled: purple;
+    --textColor-primary-text-high: #9B0000;
+    --textColor-primary-text-interactive-default: #FCFCFC;
+    --textColor-primary-text-interactive-hover: purple;
+    --textColor-primary-text-interactive-active: purple;
+    --textColor-accent1-text-high: purple;
+    --textColor-accent3-text-high: purple;
+    --textColor-accent2-text-high: purple;
+    --borderColor-current: currentColor;
+    --borderColor-transparent: transparent;
+    --borderColor-neutral-border-high: #000000;
+    --borderColor-neutral-border-medium: #535353;
+    --borderColor-neutral-border-low: purple;
+    --borderColor-neutral-border-interactive-disabled: #CECECF;
+    --borderColor-primary-border-high: purple;
+    --borderColor-primary-border-interactive-default: #9B0000;
+    --borderColor-primary-border-interactive-hover: #9B0000;
+    --borderColor-primary-border-interactive-active: #B40000;
+    --borderColor-promo-border-high: purple;
+    --borderColor-select-border-high: purple;
+    --borderColor-accent1-border-high: purple;
+    --borderColor-accent3-border-high: purple;
+    --borderColor-accent2-border-high: purple;
+  }
+  
+  .enable-darkmode {
+    --colors-neutral-background-low: #12121A;
+    --colors-neutral-background-interactive-hover: #51515E;
+    --backgroundColor-neutral-background-low: #000000;
+    --backgroundColor-neutral-background-interactive-default: #0F0F0F;
+    --backgroundColor-neutral-background-interactive-disabled: #20202B;
+    --backgroundColor-neutral-background-interactive-hover: #12121A;
+    --textColor-neutral-text-high: #FCFCFC;
+    --textColor-neutral-text-medium: #757575;
+    --textColor-primary-text-interactive-default: #000000;
+    --borderColor-neutral-border-interactive-disabled: #20202B;
+    --borderColor-primary-border-interactive-default: #691919;
+  }
+  
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --colors-neutral-background-low: #12121A;
+      --colors-neutral-background-interactive-hover: #51515E;
+      --backgroundColor-neutral-background-low: #000000;
+      --backgroundColor-neutral-background-interactive-default: #0F0F0F;
+      --backgroundColor-neutral-background-interactive-disabled: #20202B;
+      --backgroundColor-neutral-background-interactive-hover: #12121A;
+      --textColor-neutral-text-high: #FCFCFC;
+      --textColor-neutral-text-medium: #757575;
+      --textColor-primary-text-interactive-default: #000000;
+      --borderColor-neutral-border-interactive-disabled: #20202B;
+      --borderColor-primary-border-interactive-default: #691919;
+    }
+  }
+  /* END | Generated functional colors */
+
+  .enable-darkmode {
+    @apply bg-neutral-background-low
+  }
+
   body:where(:not(.reset)) {
-    @apply bg-white dark:bg-black-900 text-lg font-body;
+    /* bg-white dark:bg-black-900 */
+    @apply bg-neutral-background-low text-lg font-body;
   }
 
   h1:where(:not(.reset)) {
@@ -170,6 +332,10 @@
 
   input[type='submit']:where(:not(.reset)) {
     @apply asButton;
+  }
+
+  img {
+    @apply text-neutral-text-high;
   }
 
   figcaption:where(:not(.reset)) {

@@ -19,3 +19,10 @@ export const Default: Story = {
     label: "Cookie value",
   },
 };
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+    label: "Cookie value",
+  },
+};

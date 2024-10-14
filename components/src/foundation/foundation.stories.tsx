@@ -1,365 +1,256 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from "@storybook/react";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-    title: 'Foundation/base',
+  title: "Foundation/base",
 } satisfies Meta;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
+/* START | Generated colors */
+const colors = {
+  'green-50': 'bg-[#9DCF7C]',
+  'green-100': 'bg-[#82C257]',
+  'green-200': 'bg-[#69B637]',
+  'green-300': 'bg-[#52A919]',
+  'green-400': 'bg-[#3E9D00]',
+  'green-500': 'bg-[#348300]',
+  'green-600': 'bg-[#296800]',
+  'green-700': 'bg-[#1F4E00]',
+  'green-800': 'bg-[#153400]',
+  'green-900': 'bg-[#0A1A00]',
+  'blue-50': 'bg-[#BFE4FF]',
+  'blue-100': 'bg-[#8FD1FF]',
+  'blue-200': 'bg-[#60BDFF]',
+  'blue-300': 'bg-[#30A9FF]',
+  'blue-400': 'bg-[#0095FF]',
+  'blue-500': 'bg-[#007AD1]',
+  'blue-600': 'bg-[#005FA3]',
+  'blue-700': 'bg-[#004475]',
+  'blue-800': 'bg-[#002A47]',
+  'blue-900': 'bg-[#000F1A]',
+  'gray-50': 'bg-[#CECECF]',
+  'gray-100': 'bg-[#B1B1B7]',
+  'gray-200': 'bg-[#97979F]',
+  'gray-300': 'bg-[#7D7D87]',
+  'gray-400': 'bg-[#64646F]',
+  'gray-500': 'bg-[#51515E]',
+  'gray-600': 'bg-[#3F3F4D]',
+  'gray-700': 'bg-[#2F2F3C]',
+  'gray-800': 'bg-[#20202B]',
+  'gray-900': 'bg-[#12121A]',
+  'purple-50': 'bg-[#E5BFFF]',
+  'purple-100': 'bg-[#CA92F0]',
+  'purple-200': 'bg-[#B068E0]',
+  'purple-300': 'bg-[#9843D1]',
+  'purple-400': 'bg-[#8223C1]',
+  'purple-500': 'bg-[#6917A0]',
+  'purple-600': 'bg-[#510E7E]',
+  'purple-700': 'bg-[#3A075D]',
+  'purple-800': 'bg-[#24023B]',
+  'purple-900': 'bg-[#0F001A]',
+  'black-50': 'bg-[#FFFFFF]',
+  'black-100': 'bg-[#FCFCFC]',
+  'black-200': 'bg-[#DBDBDB]',
+  'black-300': 'bg-[#B9B9B9]',
+  'black-400': 'bg-[#979797]',
+  'black-500': 'bg-[#757575]',
+  'black-600': 'bg-[#535353]',
+  'black-700': 'bg-[#313131]',
+  'black-800': 'bg-[#0F0F0F]',
+  'black-900': 'bg-[#000000]',
+  'red-50': 'bg-[#FFB8B8]',
+  'red-100': 'bg-[#EC6A6A]',
+  'red-200': 'bg-[#DA3434]',
+  'red-300': 'bg-[#C71212]',
+  'red-400': 'bg-[#B40000]',
+  'red-500': 'bg-[#9B0000]',
+  'red-600': 'bg-[#820C0C]',
+  'red-700': 'bg-[#691919]',
+  'red-800': 'bg-[#502424]',
+  'red-900': 'bg-[#362727]',
+  'transparent': 'bg-[transparent]',
+  'white': 'bg-[#FCFCFC]'
+}
+/* END | Generated colors */
+/* START | Generated functional colors */
+const functionalColors = {
+  text: [
+  "text-current",
+  "text-transparent",
+  "text-neutral-text-high",
+  "text-neutral-text-medium",
+  "text-neutral-text-inverse",
+  "text-neutral-text-light-onbackground",
+  "text-neutral-text-dark-onbackground",
+  "text-neutral-text-interactive-disabled",
+  "text-primary-text-high",
+  "text-primary-text-interactive-default",
+  "text-primary-text-interactive-hover",
+  "text-primary-text-interactive-active",
+  "text-accent1-text-high",
+  "text-accent3-text-high",
+  "text-accent2-text-high"
+],
+  background: [
+  "bg-current",
+  "bg-transparent",
+  "bg-neutral-background-low",
+  "bg-neutral-background-medium",
+  "bg-neutral-background-interactive-default",
+  "bg-neutral-background-interactive-disabled",
+  "bg-neutral-background-interactive-hover",
+  "bg-primary-background-high",
+  "bg-primary-background-medium",
+  "bg-primary-background-low",
+  "bg-primary-background-interactive-default",
+  "bg-primary-background-interactive-hover",
+  "bg-primary-background-interactive-active",
+  "bg-accent1-background-high",
+  "bg-accent1-background-medium",
+  "bg-accent1-background-low",
+  "bg-accent1-background-interactive-default",
+  "bg-accent1-background-interactive-hover",
+  "bg-accent1-background-interactive-active",
+  "bg-accent2-background-high",
+  "bg-accent2-background-medium",
+  "bg-accent2-background-low",
+  "bg-accent3-background-high",
+  "bg-accent3-background-medium",
+  "bg-accent3-background-low",
+  "bg-accent3-background-interactive-default"
+],
+  border: [
+  "border-current",
+  "border-transparent",
+  "border-neutral-border-high",
+  "border-neutral-border-medium",
+  "border-neutral-border-low",
+  "border-neutral-border-interactive-disabled",
+  "border-primary-border-high",
+  "border-primary-border-interactive-default",
+  "border-primary-border-interactive-hover",
+  "border-primary-border-interactive-active",
+  "border-promo-border-high",
+  "border-select-border-high",
+  "border-accent1-border-high",
+  "border-accent3-border-high",
+  "border-accent2-border-high"
+],
+  other: [
+  "-transparent",
+  "-neutral-background-low",
+  "-neutral-background-medium",
+  "-neutral-background-interactive-default",
+  "-neutral-background-interactive-disabled",
+  "-neutral-background-interactive-hover",
+  "-neutral-text-high",
+  "-neutral-text-medium",
+  "-neutral-text-inverse",
+  "-neutral-text-light-onbackground",
+  "-neutral-text-dark-onbackground",
+  "-neutral-text-interactive-disabled",
+  "-neutral-border-high",
+  "-neutral-border-medium",
+  "-neutral-border-low",
+  "-neutral-border-interactive-disabled",
+  "-primary-background-high",
+  "-primary-background-medium",
+  "-primary-background-low",
+  "-primary-background-interactive-default",
+  "-primary-background-interactive-hover",
+  "-primary-background-interactive-active",
+  "-primary-text-high",
+  "-primary-text-interactive-default",
+  "-primary-text-interactive-hover",
+  "-primary-text-interactive-active",
+  "-primary-border-high",
+  "-primary-border-interactive-default",
+  "-primary-border-interactive-hover",
+  "-primary-border-interactive-active",
+  "-accent1-background-high",
+  "-accent1-background-medium",
+  "-accent1-background-low",
+  "-accent1-background-interactive-default",
+  "-accent1-background-interactive-hover",
+  "-accent1-background-interactive-active",
+  "-accent1-text-high",
+  "-accent1-border-high",
+  "-accent2-background-high",
+  "-accent2-background-medium",
+  "-accent2-background-low",
+  "-accent3-background-high",
+  "-accent3-background-medium",
+  "-accent3-background-low",
+  "-accent3-background-interactive-default",
+  "-accent3-text-high",
+  "-accent3-border-high",
+  "-accent2-text-high",
+  "-accent2-border-high"
+],
+}
+/* END | Generated functional colors */
 
-// More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args
-export const Colors: Story = {
-    render: () => {
-        return <div className='w-full p-20'><h1>Colors</h1>
-<div id="colors" className="grid grid-cols-10 w-full ">
-  <div className="bg-transparent p-6">transparent</div>
-  <div className="bg-white p-6 col-end-11">white</div>
-  <div className="bg-red-50 p-6">red-50</div>
-  <div className="bg-red-100 p-6">red-100</div>
-  <div className="bg-red-200 p-6">red-200</div>
-  <div className="bg-red-300 p-6">red-300</div>
-  <div className="bg-red-400 p-6">red-400</div>
-  <div className="bg-red-500 p-6">red-500</div>
-  <div className="bg-red-600 p-6">red-600</div>
-  <div className="bg-red-700 p-6">red-700</div>
-  <div className="bg-red-800 p-6">red-800</div>
-  <div className="bg-red-900 p-6">red-900</div>
-  <div className="bg-green-50 p-6">green-50</div>
-  <div className="bg-green-100 p-6">green-100</div>
-  <div className="bg-green-200 p-6">green-200</div>
-  <div className="bg-green-300 p-6">green-300</div>
-  <div className="bg-green-400 p-6">green-400</div>
-  <div className="bg-green-500 p-6">green-500</div>
-  <div className="bg-green-600 p-6">green-600</div>
-  <div className="bg-green-700 p-6">green-700</div>
-  <div className="bg-green-800 p-6">green-800</div>
-  <div className="bg-green-900 p-6">green-900</div>
-  <div className="bg-blue-50 p-6">blue-50</div>
-  <div className="bg-blue-100 p-6">blue-100</div>
-  <div className="bg-blue-200 p-6">blue-200</div>
-  <div className="bg-blue-300 p-6">blue-300</div>
-  <div className="bg-blue-400 p-6">blue-400</div>
-  <div className="bg-blue-500 p-6">blue-500</div>
-  <div className="bg-blue-600 p-6">blue-600</div>
-  <div className="bg-blue-700 p-6">blue-700</div>
-  <div className="bg-blue-800 p-6">blue-800</div>
-  <div className="bg-blue-900 p-6">blue-900</div>
-  <div className="bg-gray-50 p-6">gray-50</div>
-  <div className="bg-gray-100 p-6">gray-100</div>
-  <div className="bg-gray-200 p-6">gray-200</div>
-  <div className="bg-gray-300 p-6">gray-300</div>
-  <div className="bg-gray-400 p-6">gray-400</div>
-  <div className="bg-gray-500 p-6">gray-500</div>
-  <div className="bg-gray-600 p-6">gray-600</div>
-  <div className="bg-gray-700 p-6">gray-700</div>
-  <div className="bg-gray-800 p-6">gray-800</div>
-  <div className="bg-gray-900 p-6">gray-900</div>
-  <div className="bg-purple-50 p-6">purple-50</div>
-  <div className="bg-purple-100 p-6">purple-100</div>
-  <div className="bg-purple-200 p-6">purple-200</div>
-  <div className="bg-purple-300 p-6">purple-300</div>
-  <div className="bg-purple-400 p-6">purple-400</div>
-  <div className="bg-purple-500 p-6">purple-500</div>
-  <div className="bg-purple-600 p-6">purple-600</div>
-  <div className="bg-purple-700 p-6">purple-700</div>
-  <div className="bg-purple-800 p-6">purple-800</div>
-  <div className="bg-purple-900 p-6">purple-900</div>
-  <div className="bg-primary-50 p-6">primary-50</div>
-  <div className="bg-primary-100 p-6">primary-100</div>
-  <div className="bg-primary-200 p-6">primary-200</div>
-  <div className="bg-primary-300 p-6">primary-300</div>
-  <div className="bg-primary-400 p-6">primary-400</div>
-  <div className="bg-primary-500 p-6">primary-500</div>
-  <div className="bg-primary-600 p-6">primary-600</div>
-  <div className="bg-primary-700 p-6">primary-700</div>
-  <div className="bg-primary-800 p-6">primary-800</div>
-  <div className="bg-primary-900 p-6">primary-900</div>
-  <div className="bg-black-900 p-6">black</div>
-</div>
-<h1>Didn't melt fairer keepsakes since Fellowship elsewhere.</h1>
-<p>Woodlands payment Osgiliath tightening. Barad-dur follow belly comforts tender tough bell? Many that live deserve
-  death. Some that die deserve life. Outwitted teatime grasp defeated before stones reflection corset seen animals
-  Saruman's call?</p>
-<h2>Tad survive ensnare joy mistake courtesy Bagshot Row.</h2>
-<p>Ligulas step drops both? You shall not pass! Tender respectable success Valar impressive unfriendly bloom
-  scraped?
-  Branch hey-diddle-diddle pony trouble'll sleeping during jump Narsil.</p>
-<h3>North valor overflowing sort Iáve mister kingly money?</h3>
-<p>Curse you and all the halflings! Deserted anytime Lake-town burned caves balls. Smoked lthilien forbids Thrain?</p>
-<ul>
-  <li>Adamant.</li>
-  <li>Southfarthing!</li>
-  <li>Witch-king.</li>
-  <li>Precious.</li>
-  <li>Gaffer's!</li>
-</ul>
-<ul>
-  <li>Excuse tightening yet survives two cover Undómiel city ablaze.</li>
-  <li>Keepsakes deeper clouds Buckland position 21 lied bicker fountains ashamed.</li>
-  <li>Women rippling cold steps rules Thengel finer.</li>
-  <li>Portents close Havens endured irons hundreds handle refused sister?</li>
-  <li>Harbor Grubbs fellas riddles afar!</li>
-</ul>
-<h3>Narsil enjoying shattered bigger leaderless retrieve dreamed dwarf.</h3>
-<p>Ravens wonder wanted runs me crawl gaining lots faster! Khazad-dum surprise baby season ranks. I bid you all a
-  very
-  fond farewell.</p>
-<ol>
-  <li>Narsil.</li>
-  <li>Elros.</li>
-  <li>Arwen Evenstar.</li>
-  <li>Maggot's?</li>
-  <li>Bagginses?</li>
-</ol>
-<ol>
-  <li>Concerning Hobbits l golf air fifth bell prolonging camp.</li>
-  <li>Grond humble rods nearest mangler.</li>
-  <li>Enormity Lórien merry gravy stayed move.</li>
-  <li>Diversion almost notion furs between fierce laboring Nazgûl ceaselessly parent.</li>
-  <li>Agree ruling um wasteland Bagshot Row expect sleep.</li>
-</ol>
-<h3>Ere answering track forests shards roof!</h3>
-<p>Delay freezes Gollum. Let the Ring-bearer decide. Bagshot Row chokes pole pauses immediately orders taught éored
-  musing three-day? Disease rune repel source fire Goblinses already?</p>
-<table>
-  <thead>
-    <tr>
-      <th></th>
-      <th>Dangers</th>
-      <th>Playing</th>
-      <th>Window</th>
-      <th>Meaning</th>
-      <th>Pace</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Current</td>
-      <td>living</td>
-      <td>odds</td>
-      <td>charged</td>
-      <td>heads</td>
-      <td>felt</td>
-    </tr>
-    <tr>
-      <td>Inn</td>
-      <td>climbing</td>
-      <td>destroying</td>
-      <td>overhead</td>
-      <td>roll</td>
-      <td>mud</td>
-    </tr>
-    <tr>
-      <td>Breath</td>
-      <td>relevant</td>
-      <td>éored</td>
-      <td>hinges</td>
-      <td>year</td>
-      <td>signed</td>
-    </tr>
-    <tr>
-      <td>Accept</td>
-      <td>threads</td>
-      <td>name</td>
-      <td>fitted</td>
-      <td>precious</td>
-      <td>attacked</td>
-    </tr>
-    <tr>
-      <td>Chief</td>
-      <td>sails</td>
-      <td>first-born</td>
-      <td>pottery</td>
-      <td>lever</td>
-      <td>antagonize</td>
-    </tr>
-    <tr>
-      <td>Unoccupied</td>
-      <td>victorious</td>
-      <td>means</td>
-      <td>lovely</td>
-      <td>humble</td>
-      <td>force</td>
-    </tr>
-  </tbody>
-  <tfoot>
-    <tr>
-      <td>kinsmen</td>
-      <td>give</td>
-      <td>walking</td>
-      <td>thousand</td>
-      <td>manners</td>
-      <td>burning</td>
-    </tr>
-  </tfoot>
-</table>
-<h4>Afraid smithy Fellowship debt carven hooks.</h4>
-<p>What about second breakfast? Nags runt near Lindir lock discover level? Andûril breathe waited flatten union.</p>
-<blockquote>
-  <p>You shall be the Fellowship of the Ring.</p>
-  <footer>—Númenor, <cite>sweeter burned verse</cite></footer>
-</blockquote>
-<h5>Should Shirelings extraordinary spends poison's willing enchantment.</h5>
-<p>
-  I think we should get off the road. Penalty sight splintered Misty Mountain mithril? Unrest lasts rode league
-  bears
-  absence Bracegirdle athletic contract nice parent slowed?</p>
-<pre>Pardon Concerning Hobbits rune goblins? Twitching figure including rightful Thorin's level! Worth tubers threats Hornburg deadliest? Unfold thumping shh wants Homely!</pre>
-<h6>Improve drops absolutely tight deceit potent Treebeard startled!</h6>
-<p>
-  J.R.R. Tolkien 3000 uttered veins <q>roaring winds moaning flaming</q>. Meddle <ins>measure pure</ins> Samwise
-  Gamgee
-  business! <sub>Lied</sub> mistake Proudfoots pon. Instance 80 <dfn>morbid ceremonial plunge</dfn> Anor mad.
-  Questions
-  shells hangs noble Proudfoots <var>throws</var>. <mark>Rampart damage</mark> questions Chubbs 3000 conjurer?
-  Single
-  tempt peasants <strong>Bolg Athelas Mordor Wraiths Azog Undómiel</strong> mangler? <samp>Nori Giants Undómiel
-    Rivendell</samp> spike posts took. Fool's Underhill boarded <cite>vanishing twilight unheard-of</cite>.
-  <abbr>Presence</abbr> Dunland lamb lair. Barricade <sup>didn't</sup> feelings purring vine Morgoth. Distract
-  Giants
-  nearing champion <kbd>T</kbd>. Clothing titles quick bother <em>Arod Gloin Beren</em> troop? Balls crashing
-  bastards
-  <small>arrives precisely rascal</small> stubbornness Snowbourn. Hobbitses rose barren <a>strengths tested mirrors
-    moonlight password</a> center? Remade free filthy breaking respect amuse Arod? Vengeance
-  <del>Elessar Wolves</del> posts remain doorway said! <time>Suspects</time> fight Merry hungers locked yelp.
-</p>
-<hr/>
-<dl>
-  <dt>Abandon</dt>
-  <dd>Tact flies disturber thinking hospitality Elros act vest handy ranks.</dd>
-  <dt>Devil</dt>
-  <dd>Boneses spilled Caradhras hungry pace lanterns glory haunted shone forging.</dd>
-  <dd>Unprotected Beorn's fireworks dream journey beacon dwells gnaws key.</dd>
-  <dt>Happened</dt>
-  <dd>Known wanna fifth Bill hell knew she scale.</dd>
-  <dd>Missing vanish taken colleague sway voice tricks 13 Grimbold.</dd>
-  <dd>Thereof skills kingsfoil innocent riding light Thorin Oakenshield won.</dd>
-</dl>
-
-<h1>Images</h1>
-
-<img src="https://picsum.photos/1280/720/" />
-
-<figure>
-  <img src="https://picsum.photos/1280/720/" alt="The beautiful MDN logo." />
-  <figcaption>The beautiful MDN logo</figcaption>
-</figure>
-
-<form>
-  <fieldset>
-    <legend>Blind kitchen</legend>
-    <div>
-      <label>Text</label>
-      <input type="text"/>
-    </div>
-    <div>
-      <label>Email</label>
-      <input type="email"/>
-    </div>
-    <div>
-      <label>Password</label>
-      <input type="password"/>
-    </div>
-    <div>
-      <label>Url</label>
-      <input type="url"/>
-    </div>
-    <div>
-      <label>Number</label>
-      <input type="number"/>
-    </div>
-    <div>
-      <label>Tel</label>
-      <input type="tel"/>
-    </div>
-    <div>
-      <label>Search</label>
-      <input type="search"/>
-    </div>
-    <div>
-      <label>Time</label>
-      <input type="time"/>
-    </div>
-    <div>
-      <label>Date</label>
-      <input type="date"/>
-    </div>
-    <div>
-      <label>Datetime-local</label>
-      <input type="datetime-local"/>
-    </div>
-    <div>
-      <label>Week</label>
-      <input type="week"/>
-    </div>
-    <div>
-      <label>Textarea</label>
-      <textarea></textarea>
-    </div>
-  </fieldset>
-  <fieldset>
-    <legend>Chasm mountains mountainside</legend>
-    <div>
-      <label>Month</label>
-      <input type="month"/>
-    </div>
-    <div>
-      <label><input type="checkbox" name="checkbox"/>sharp decided</label>
-    </div>
-    <div>
-      <label>Color</label>
-      <input type="color"/>
-    </div>
-    <div>
-      <label>File</label>
-      <input type="file"/>
-    </div>
-    <div>
-      <label>Hidden</label>
-      <input type="hidden"/>
-    </div>
-    <div>
-      <label>Image</label>
-      <input type="image"/>
-    </div>
-    <div>
-      <label>bags moment's darkest hastens highest spot</label>
-      <label><input type="radio" name="radio"/>sakes is</label>
-      <label><input type="radio" name="radio"/>tomb vines</label>
-      <label><input type="radio" name="radio"/>tricksy plain</label>
-    </div>
-    <div>
-      <label>Range</label>
-      <input type="range"/>
-    </div>
-    <div>
-      <input type="button" value="Button"/>
-    </div>
-    <div>
-      <input type="reset" value="Reset"/>
-    </div>
-    <div>
-      <input type="submit" value="Submit"/>
-    </div>
-    <button>works tilled entered</button>
-    <div>
-      <label>Select</label>
-      <select>
-        <optgroup label="dragon's poring squash">
-          <option>ending</option>
-          <option>always</option>
-          <option>spears</option>
-        </optgroup>
-        <optgroup label="suffer night's pain">
-          <option>diamond</option>
-          <option>unprotected</option>
-          <option>consider</option>
-        </optgroup>
-      </select>
-    </div>
-  </fieldset>
-                </form></div>
-    }
+export const FunctionalColors: Story = {
+  render: () => {
+    return (
+      <div className="w-full p-20">
+        <h1>Functional colors</h1>
+        <h2>Text</h2>
+        <div
+          id="text"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {functionalColors.text.map((i) => (
+            <div className={`${i} p-6`}>{i}</div>
+          ))}
+        </div>
+        <h2>Background</h2>
+        <div
+          id="background"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {functionalColors.background.map((i) => (
+            <div className={`${i} p-6`}>{i}</div>
+          ))}
+        </div>
+        <h2>Border</h2>
+        <div
+          id="border"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {functionalColors.border.map((i) => (
+            <div className={`${i} p-6 border-2`}>{i}</div>
+          ))}
+        </div>
+        <h2>Other</h2>
+        <div
+          id="other"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {functionalColors.other.map((i) => (
+            <div className={`${i} p-6`}>{i}</div>
+          ))}
+        </div>
+      </div>
+    );
+  },
 };
 
+export const BaseColors: Story = {
+  render: () => {
+    return (
+      <div className="w-full p-20">
+        <h1>Colors</h1>
+        <div
+          id="text"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {Object.entries(colors).map(([name, value]) => (
+            <div className={`${value} p-6`}>{name}</div>
+          ))}
+        </div>
+      </div>
+    );
+  },
+};

@@ -25,7 +25,6 @@ export const TextInput = forwardRef<HTMLInputElement, Props>(
           id={id}
           aria-labelledby={calcId + "-label"}
           type="text"
-          className="!bg-black-50"
           {...inputProps}
         ></input>
         {message ? (

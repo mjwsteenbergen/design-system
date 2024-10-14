@@ -1,338 +1,205 @@
-const items = [50, 100, 200, 300, 400, 500, 600, 700, 800, 900];
-
-/**
- * 
- * @param { import("./colortypes").PalletttePallette[] } input 
- * @returns { Record<string, Record<number, string>>}
- */
-const convertPalettteToTailwind = (input) => {
-  /** @type {Record<string, Record<number, string>>} */
-  const finalRes = {};
-  return input.reduce((tailw, item) => {
-    const { paletteName, swatches } = item;
-    /**
-     * @type {Record<number, string>}
-     */
-    const res = {};
-
-    tailw[paletteName.toLowerCase()] = swatches.reverse().reduce((res, swath, index) => {
-      res[items[index]] = "#" + swath.color;
-      return res;
-    }, res);
-    return tailw;
-  }, finalRes);
-}
-
-const baseColors = {
-  transparent: 'transparent',
-  'white': "#FCFCFC",
-  "black": "#0F0F0F",
-}
-
-const colors = [
-  {
-    "paletteName": "Green",
-    "swatches": [
-      {
-        "name": "New Swatch",
-        "color": "0A1A00"
-      },
-      {
-        "name": "New Swatch",
-        "color": "153400"
-      },
-      {
-        "name": "New Swatch",
-        "color": "1F4E00"
-      },
-      {
-        "name": "New Swatch",
-        "color": "296800"
-      },
-      {
-        "name": "New Swatch",
-        "color": "348300"
-      },
-      {
-        "name": "New Swatch",
-        "color": "3E9D00"
-      },
-      {
-        "name": "New Swatch",
-        "color": "52A919"
-      },
-      {
-        "name": "New Swatch",
-        "color": "69B637"
-      },
-      {
-        "name": "New Swatch",
-        "color": "82C257"
-      },
-      {
-        "name": "New Swatch",
-        "color": "9DCF7C"
-      }
-    ]
-  },
-  {
-    "paletteName": "Blue",
-    "swatches": [
-      {
-        "name": "New Swatch",
-        "color": "000F1A"
-      },
-      {
-        "name": "New Swatch",
-        "color": "002A47"
-      },
-      {
-        "name": "New Swatch",
-        "color": "004475"
-      },
-      {
-        "name": "New Swatch",
-        "color": "005FA3"
-      },
-      {
-        "name": "New Swatch",
-        "color": "007AD1"
-      },
-      {
-        "name": "New Swatch",
-        "color": "0095FF"
-      },
-      {
-        "name": "New Swatch",
-        "color": "30A9FF"
-      },
-      {
-        "name": "New Swatch",
-        "color": "60BDFF"
-      },
-      {
-        "name": "New Swatch",
-        "color": "8FD1FF"
-      },
-      {
-        "name": "New Swatch",
-        "color": "BFE4FF"
-      }
-    ]
-  },
-  {
-    "paletteName": "Gray",
-    "swatches": [
-      {
-        "name": "New Swatch",
-        "color": "12121A"
-      },
-      {
-        "name": "New Swatch",
-        "color": "20202B"
-      },
-      {
-        "name": "New Swatch",
-        "color": "2F2F3C"
-      },
-      {
-        "name": "New Swatch",
-        "color": "3F3F4D"
-      },
-      {
-        "name": "New Swatch",
-        "color": "51515E"
-      },
-      {
-        "name": "New Swatch",
-        "color": "64646F"
-      },
-      {
-        "name": "New Swatch",
-        "color": "7D7D87"
-      },
-      {
-        "name": "New Swatch",
-        "color": "97979F"
-      },
-      {
-        "name": "New Swatch",
-        "color": "B1B1B7"
-      },
-      {
-        "name": "New Swatch",
-        "color": "CECECF"
-      }
-    ]
-  },
-  {
-    "paletteName": "Purple",
-    "swatches": [
-      {
-        "name": "New Swatch",
-        "color": "0F001A"
-      },
-      {
-        "name": "New Swatch",
-        "color": "24023B"
-      },
-      {
-        "name": "New Swatch",
-        "color": "3A075D"
-      },
-      {
-        "name": "New Swatch",
-        "color": "510E7E"
-      },
-      {
-        "name": "New Swatch",
-        "color": "6917A0"
-      },
-      {
-        "name": "New Swatch",
-        "color": "8223C1"
-      },
-      {
-        "name": "New Swatch",
-        "color": "9843D1"
-      },
-      {
-        "name": "New Swatch",
-        "color": "B068E0"
-      },
-      {
-        "name": "New Swatch",
-        "color": "CA92F0"
-      },
-      {
-        "name": "New Swatch",
-        "color": "E5BFFF"
-      }
-    ]
-  },
-  {
-    "paletteName": "Black",
-    "swatches": [
-      {
-        "name": "New Swatch",
-        "color": "000000"
-      },
-      {
-        "name": "New Swatch",
-        "color": "0F0F0F"
-      },
-      {
-        "name": "New Swatch",
-        "color": "313131"
-      },
-      {
-        "name": "New Swatch",
-        "color": "535353"
-      },
-      {
-        "name": "New Swatch",
-        "color": "757575"
-      },
-      {
-        "name": "New Swatch",
-        "color": "979797"
-      },
-      {
-        "name": "New Swatch",
-        "color": "B9B9B9"
-      },
-      {
-        "name": "New Swatch",
-        "color": "DBDBDB"
-      },
-      {
-        "name": "New Swatch",
-        "color": "FCFCFC"
-      },
-      {
-        "name": "New Swatch",
-        "color": "FFFFFF"
-      }
-    ]
-  },
-  {
-    "paletteName": "Red",
-    "swatches": [
-      {
-        "name": "New Swatch",
-        "color": "362727"
-      },
-      {
-        "name": "New Swatch",
-        "color": "502424"
-      },
-      {
-        "name": "New Swatch",
-        "color": "691919"
-      },
-      {
-        "name": "New Swatch",
-        "color": "820C0C"
-      },
-      {
-        "name": "New Swatch",
-        "color": "9B0000"
-      },
-      {
-        "name": "New Swatch",
-        "color": "B40000"
-      },
-      {
-        "name": "New Swatch",
-        "color": "C71212"
-      },
-      {
-        "name": "New Swatch",
-        "color": "DA3434"
-      },
-      {
-        "name": "New Swatch",
-        "color": "EC6A6A"
-      },
-      {
-        "name": "New Swatch",
-        "color": "FFB8B8"
-      }
-    ]
-  }
-]
-
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  presets: [
-    require("./components/tailwind.pluginhack.cjs")
-  ],
-  content: [
-    "./index.html",
-    "./src/**/*.{js,ts,jsx,tsx}",
-  ],
-  darkMode: 'media',
+  presets: [require("./components/tailwind.pluginhack.cjs")],
+  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  darkMode: "media",
   theme: {
-    accentColor: '#b40000',
-    colors: {
-      ...baseColors,
-      ...convertPalettteToTailwind(colors),
-      primary: convertPalettteToTailwind(colors).red,
+    accentColor: "#b40000",
+    /* START | Generated functional colors */
+    ...{
+      "colors": {
+        "transparent": "var(--colors-transparent)",
+        "neutral-background": {
+          "low": "var(--colors-neutral-background-low)",
+          "medium": "var(--colors-neutral-background-medium)",
+          "interactive-default": "var(--colors-neutral-background-interactive-default)",
+          "interactive-disabled": "var(--colors-neutral-background-interactive-disabled)",
+          "interactive-hover": "var(--colors-neutral-background-interactive-hover)"
+        },
+        "neutral-text": {
+          "high": "var(--colors-neutral-text-high)",
+          "medium": "var(--colors-neutral-text-medium)",
+          "inverse": "var(--colors-neutral-text-inverse)",
+          "light-onbackground": "var(--colors-neutral-text-light-onbackground)",
+          "dark-onbackground": "var(--colors-neutral-text-dark-onbackground)",
+          "interactive-disabled": "var(--colors-neutral-text-interactive-disabled)"
+        },
+        "neutral-border": {
+          "high": "var(--colors-neutral-border-high)",
+          "medium": "var(--colors-neutral-border-medium)",
+          "low": "var(--colors-neutral-border-low)",
+          "interactive-disabled": "var(--colors-neutral-border-interactive-disabled)"
+        },
+        "primary-background": {
+          "high": "var(--colors-primary-background-high)",
+          "medium": "var(--colors-primary-background-medium)",
+          "low": "var(--colors-primary-background-low)",
+          "interactive-default": "var(--colors-primary-background-interactive-default)",
+          "interactive-hover": "var(--colors-primary-background-interactive-hover)",
+          "interactive-active": "var(--colors-primary-background-interactive-active)"
+        },
+        "primary-text": {
+          "high": "var(--colors-primary-text-high)",
+          "interactive-default": "var(--colors-primary-text-interactive-default)",
+          "interactive-hover": "var(--colors-primary-text-interactive-hover)",
+          "interactive-active": "var(--colors-primary-text-interactive-active)"
+        },
+        "primary-border": {
+          "high": "var(--colors-primary-border-high)",
+          "interactive-default": "var(--colors-primary-border-interactive-default)",
+          "interactive-hover": "var(--colors-primary-border-interactive-hover)",
+          "interactive-active": "var(--colors-primary-border-interactive-active)"
+        },
+        "accent1-background": {
+          "high": "var(--colors-accent1-background-high)",
+          "medium": "var(--colors-accent1-background-medium)",
+          "low": "var(--colors-accent1-background-low)",
+          "interactive-default": "var(--colors-accent1-background-interactive-default)",
+          "interactive-hover": "var(--colors-accent1-background-interactive-hover)",
+          "interactive-active": "var(--colors-accent1-background-interactive-active)"
+        },
+        "accent1-text": {
+          "high": "var(--colors-accent1-text-high)"
+        },
+        "accent1-border": {
+          "high": "var(--colors-accent1-border-high)"
+        },
+        "accent2-background": {
+          "high": "var(--colors-accent2-background-high)",
+          "medium": "var(--colors-accent2-background-medium)",
+          "low": "var(--colors-accent2-background-low)"
+        },
+        "accent3-background": {
+          "high": "var(--colors-accent3-background-high)",
+          "medium": "var(--colors-accent3-background-medium)",
+          "low": "var(--colors-accent3-background-low)",
+          "interactive-default": "var(--colors-accent3-background-interactive-default)"
+        },
+        "accent3-text": {
+          "high": "var(--colors-accent3-text-high)"
+        },
+        "accent3-border": {
+          "high": "var(--colors-accent3-border-high)"
+        },
+        "accent2-text": {
+          "high": "var(--colors-accent2-text-high)"
+        },
+        "accent2-border": {
+          "high": "var(--colors-accent2-border-high)"
+        }
+      },
+      "backgroundColor": {
+        "current": "var(--backgroundColor-current)",
+        "transparent": "var(--backgroundColor-transparent)",
+        "neutral-background": {
+          "low": "var(--backgroundColor-neutral-background-low)",
+          "medium": "var(--backgroundColor-neutral-background-medium)",
+          "interactive-default": "var(--backgroundColor-neutral-background-interactive-default)",
+          "interactive-disabled": "var(--backgroundColor-neutral-background-interactive-disabled)",
+          "interactive-hover": "var(--backgroundColor-neutral-background-interactive-hover)"
+        },
+        "primary-background": {
+          "high": "var(--backgroundColor-primary-background-high)",
+          "medium": "var(--backgroundColor-primary-background-medium)",
+          "low": "var(--backgroundColor-primary-background-low)",
+          "interactive-default": "var(--backgroundColor-primary-background-interactive-default)",
+          "interactive-hover": "var(--backgroundColor-primary-background-interactive-hover)",
+          "interactive-active": "var(--backgroundColor-primary-background-interactive-active)"
+        },
+        "accent1-background": {
+          "high": "var(--backgroundColor-accent1-background-high)",
+          "medium": "var(--backgroundColor-accent1-background-medium)",
+          "low": "var(--backgroundColor-accent1-background-low)",
+          "interactive-default": "var(--backgroundColor-accent1-background-interactive-default)",
+          "interactive-hover": "var(--backgroundColor-accent1-background-interactive-hover)",
+          "interactive-active": "var(--backgroundColor-accent1-background-interactive-active)"
+        },
+        "accent2-background": {
+          "high": "var(--backgroundColor-accent2-background-high)",
+          "medium": "var(--backgroundColor-accent2-background-medium)",
+          "low": "var(--backgroundColor-accent2-background-low)"
+        },
+        "accent3-background": {
+          "high": "var(--backgroundColor-accent3-background-high)",
+          "medium": "var(--backgroundColor-accent3-background-medium)",
+          "low": "var(--backgroundColor-accent3-background-low)",
+          "interactive-default": "var(--backgroundColor-accent3-background-interactive-default)"
+        }
+      },
+      "textColor": {
+        "current": "var(--textColor-current)",
+        "transparent": "var(--textColor-transparent)",
+        "neutral-text": {
+          "high": "var(--textColor-neutral-text-high)",
+          "medium": "var(--textColor-neutral-text-medium)",
+          "inverse": "var(--textColor-neutral-text-inverse)",
+          "light-onbackground": "var(--textColor-neutral-text-light-onbackground)",
+          "dark-onbackground": "var(--textColor-neutral-text-dark-onbackground)",
+          "interactive-disabled": "var(--textColor-neutral-text-interactive-disabled)"
+        },
+        "primary-text": {
+          "high": "var(--textColor-primary-text-high)",
+          "interactive-default": "var(--textColor-primary-text-interactive-default)",
+          "interactive-hover": "var(--textColor-primary-text-interactive-hover)",
+          "interactive-active": "var(--textColor-primary-text-interactive-active)"
+        },
+        "accent1-text": {
+          "high": "var(--textColor-accent1-text-high)"
+        },
+        "accent3-text": {
+          "high": "var(--textColor-accent3-text-high)"
+        },
+        "accent2-text": {
+          "high": "var(--textColor-accent2-text-high)"
+        }
+      },
+      "borderColor": {
+        "current": "var(--borderColor-current)",
+        "transparent": "var(--borderColor-transparent)",
+        "neutral-border": {
+          "high": "var(--borderColor-neutral-border-high)",
+          "medium": "var(--borderColor-neutral-border-medium)",
+          "low": "var(--borderColor-neutral-border-low)",
+          "interactive-disabled": "var(--borderColor-neutral-border-interactive-disabled)"
+        },
+        "primary-border": {
+          "high": "var(--borderColor-primary-border-high)",
+          "interactive-default": "var(--borderColor-primary-border-interactive-default)",
+          "interactive-hover": "var(--borderColor-primary-border-interactive-hover)",
+          "interactive-active": "var(--borderColor-primary-border-interactive-active)"
+        },
+        "promo-border": {
+          "high": "var(--borderColor-promo-border-high)"
+        },
+        "select-border": {
+          "high": "var(--borderColor-select-border-high)"
+        },
+        "accent1-border": {
+          "high": "var(--borderColor-accent1-border-high)"
+        },
+        "accent3-border": {
+          "high": "var(--borderColor-accent3-border-high)"
+        },
+        "accent2-border": {
+          "high": "var(--borderColor-accent2-border-high)"
+        }
+      }
     },
+    /* END | Generated functional colors */
     fontFamily: {
-      title: ['SuperiorTitle', "serif"],
-      heading: ['Geologica', "serif"],
-      body: ['Inter', "Arial", "Helvetica", "sans-serif"],
+      title: ["SuperiorTitle", "serif"],
+      heading: ["Geologica", "serif"],
+      body: ["Inter", "Arial", "Helvetica", "sans-serif"],
     },
     screens: {
-      'sm': '640px',
-      'md': '768px',
-      'lg': '1024px',
-      'xl': '1280px',
-      '2xl': '1536px',
-      '3xl': '1920px',
-      '4xl': '2560px',
-      '5xl': '3840px',
-    }
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1920px",
+      "4xl": "2560px",
+      "5xl": "3840px",
+    },
   },
-}
+};

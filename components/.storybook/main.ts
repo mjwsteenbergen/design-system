@@ -8,18 +8,24 @@ const config: StorybookConfig = {
   ],
   framework: {
     name: "@storybook/react-vite",
-    options: {
-      
-    },
+    options: {},
   },
   viteFinal: (v, o) => {
-    const name = `https://${process.env.CODESPACE_NAME}-6006.app.github.dev`
-    v.server = { ...v.server, port: 3000, https: true, hmr: { server: v.server?.hmr?.["server"], host: name, port: 6006, protocol: 'wss' } };
+    const name = `https://${process.env.CODESPACE_NAME}-6006.app.github.dev`;
+    v.server = {
+      ...v.server,
+      port: 3000,
+      https: true,
+      hmr: {
+        server: v.server?.hmr?.["server"],
+        host: name,
+        port: 6006,
+        protocol: "wss",
+      },
+    };
     return v;
   },
-  staticDirs: [
-    "../public"
-  ],
+  staticDirs: [],
   docs: {
     autodocs: "tag",
   },
