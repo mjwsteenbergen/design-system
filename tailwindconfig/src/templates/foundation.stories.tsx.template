@@ -1,0 +1,97 @@
+import type { Meta, StoryObj } from "@storybook/react";
+
+// More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
+const meta = {
+  title: "Foundation/base",
+} satisfies Meta;
+
+export default meta;
+type Story = StoryObj<typeof meta>;
+/* START | Generated colors */
+const colors = {
+  {{#each baseColors}}
+  '{{name}}': 'bg-[{{value}}]',
+  {{/each}}
+}
+/* END | Generated colors */
+/* START | Generated functional colors */
+const functionalColors = {
+  {{#each functionalColors}}
+  {{name}}: [
+      {{#each kvItems}}
+      "{{name}}",
+      {{/each}}
+      {{#each groups}}
+      {{#each kvItems}}
+      "{{name}}",
+      {{/each}}
+    {{/each}}
+  ],
+  {{/each}}
+  other: [],
+}
+/* END | Generated functional colors */
+
+export const FunctionalColors: Story = {
+  render: () => {
+    return (
+      <div className="w-full p-20">
+        <h1>Functional colors</h1>
+        <h2>Text</h2>
+        <div
+          id="text"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {functionalColors.text.map((i) => (
+            <div className={`${i} p-6`}>{i}</div>
+          ))}
+        </div>
+        <h2>Background</h2>
+        <div
+          id="background"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {functionalColors.bg.map((i) => (
+            <div className={`${i} p-6`}>{i}</div>
+          ))}
+        </div>
+        <h2>Border</h2>
+        <div
+          id="border"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {functionalColors.border.map((i) => (
+            <div className={`${i} p-6 border-2`}>{i}</div>
+          ))}
+        </div>
+        <h2>Other</h2>
+        <div
+          id="other"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {functionalColors.other.map((i) => (
+            <div className={`${i} p-6`}>{i}</div>
+          ))}
+        </div>
+      </div>
+    );
+  },
+};
+
+export const BaseColors: Story = {
+  render: () => {
+    return (
+      <div className="w-full p-20">
+        <h1>Colors</h1>
+        <div
+          id="text"
+          className="grid grid-cols-[repeat(auto-fit,minmax(150px,1fr))] w-full"
+        >
+          {Object.entries(colors).map(([name, value]) => (
+            <div className={`${value} p-6`}>{name}</div>
+          ))}
+        </div>
+      </div>
+    );
+  },
+};

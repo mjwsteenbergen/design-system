@@ -13,7 +13,7 @@ const Command = React.forwardRef<
   <CommandPrimitive
     ref={ref}
     className={twMerge(
-      "flex h-full w-full flex-col overflow-hidden rounded-md bg-popover text-popover-foreground",
+      "flex h-full w-full flex-col overflow-hidden rounded-md bg-neutral-background-low text-neutral-text-high",
       className
     )}
     {...props}
@@ -37,12 +37,15 @@ const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
-  <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
+  <div
+    className="flex items-center border-b-2 border-b-primary-border-interactive-default px-3"
+    cmdk-input-wrapper=""
+  >
     <Search className="mr-2 h-4 w-4 shrink-0 opacity-50" />
     <CommandPrimitive.Input
       ref={ref}
       className={twMerge(
-        "flex h-11 w-full rounded-md bg-transparent hover:bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 border-none",
+        "flex h-11 w-full rounded-md !bg-transparent hover:bg-transparent py-3 text-sm outline-none placeholder:text-muted-foreground disabled:cursor-not-allowed disabled:opacity-50 border-none",
         className
       )}
       {...props}
@@ -88,7 +91,7 @@ const CommandGroup = React.forwardRef<
   <CommandPrimitive.Group
     ref={ref}
     className={twMerge(
-      "overflow-hidden p-1 text-foreground [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-muted-foreground",
+      "overflow-hidden p-1 text-neutral-text-high [&_[cmdk-group-heading]]:px-2 [&_[cmdk-group-heading]]:py-1.5 [&_[cmdk-group-heading]]:text-xs [&_[cmdk-group-heading]]:font-medium [&_[cmdk-group-heading]]:text-neutral-text-medium",
       className
     )}
     {...props}
@@ -103,7 +106,10 @@ const CommandSeparator = React.forwardRef<
 >(({ className, ...props }, ref) => (
   <CommandPrimitive.Separator
     ref={ref}
-    className={twMerge("-mx-1 h-px bg-border", className)}
+    className={twMerge(
+      "-mx-1 h-px bg-primary-background-interactive-default",
+      className
+    )}
     {...props}
   />
 ));
@@ -116,7 +122,7 @@ const CommandItem = React.forwardRef<
   <CommandPrimitive.Item
     ref={ref}
     className={twMerge(
-      "relative flex cursor-default bg-white select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none data-[selected='true']:bg-black-200 data-[disabled=true]:opacity-50",
+      "relative flex cursor-default bg-white select-none items-center rounded-sm px-2 py-1.5 text-sm outline-none data-[disabled=true]:pointer-events-none hover:bg-primary-background-interactive-hover data-[selected='true']:bg-primary-background-low data-[disabled=true]:opacity-50",
       className
     )}
     {...props}

@@ -5,7 +5,7 @@ import { StoryWrapper } from "../utils/storywrapper";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: "Checkbox/Checkbox",
+  title: "Components/Checkbox",
   component: Checkbox,
   decorators: [StoryWrapper()],
 } satisfies Meta<typeof Checkbox>;

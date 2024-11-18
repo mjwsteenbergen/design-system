@@ -1,0 +1,39 @@
+/** @type {import('tailwindcss').Config} */
+const tailwindConfig  = {
+  darkMode: "media",
+  theme: {
+    /* START | Generated functional colors */
+    {{#each sections}}
+    {{name}}: {
+      {{#each kvItems}}
+        "{{name}}": "{{value}}",
+      {{/each}}
+      {{#each groups}}
+      "{{name}}": {
+        {{#each kvItems}}
+        "{{name}}": "{{value}}",
+        {{/each}}
+      },
+      {{/each}}
+    },
+    {{/each}}
+    /* END | Generated functional colors */
+    fontFamily: {
+      title: ["SuperiorTitle", "serif"],
+      heading: ["Geologica", "serif"],
+      body: ["Inter", "Arial", "Helvetica", "sans-serif"],
+    },
+    screens: {
+      sm: "640px",
+      md: "768px",
+      lg: "1024px",
+      xl: "1280px",
+      "2xl": "1536px",
+      "3xl": "1920px",
+      "4xl": "2560px",
+      "5xl": "3840px",
+    },
+  },
+};
+
+export default tailwindConfig;

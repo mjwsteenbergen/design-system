@@ -6,7 +6,7 @@ import { Combobox } from ".";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: "Combobox/Combobox",
+  title: "Components/Combobox",
   component: Combobox,
   decorators: [StoryWrapper()],
 } satisfies Meta<typeof Combobox>;

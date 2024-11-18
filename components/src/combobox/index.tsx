@@ -30,6 +30,7 @@ export function Combobox({
         <Button
           role="combobox"
           aria-expanded={open}
+          appearance="secondary"
           className="justify-between flex w-[300px]"
         >
           {value

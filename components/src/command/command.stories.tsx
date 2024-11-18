@@ -13,7 +13,7 @@ import { StoryWrapper } from "../utils/storywrapper";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: "Command/Command",
+  title: "Components/Command",
   component: Command,
   decorators: [StoryWrapper()],
 } satisfies Meta<typeof Command>;

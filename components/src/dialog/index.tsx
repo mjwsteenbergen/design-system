@@ -5,7 +5,6 @@ import { Xmark } from "iconoir-react";
 const Dialog = DialogPrimitive.Root;
 
 const DialogTrigger = DialogPrimitive.Trigger;
-DialogTrigger.defaultProps = {};
 
 const DialogPortal = ({ ...props }: DialogPrimitive.DialogPortalProps) => (
   <DialogPrimitive.Portal {...props} />
@@ -19,7 +18,7 @@ const DialogOverlay = React.forwardRef<
   <DialogPrimitive.Overlay
     ref={ref}
     className={
-      "fixed inset-0 z-50 dark:bg-white/20 bg-black-800/60 backdrop-blur-sm" +
+      "fixed inset-0 z-50 bg-neutral-background-high/80 backdrop-blur-sm" +
       className
     }
     {...props}
@@ -36,7 +35,7 @@ const DialogContent = React.forwardRef<
     <DialogPrimitive.Content
       ref={ref}
       className={
-        "fixed max-sm:rounded-t-md max-sm:w-screen max-sm:min-h-[calc(100vh-6rem)] max-sm:left-0 max-sm:bottom-0 sm:left-[50%] sm:bottom-[50%] z-50 grid content-start w-full sm:max-w-lg sm:max-h-[calc(100vh-1rem)] sm:overflow-y-auto sm:translate-x-[-50%] sm:translate-y-[50%] gap-4 bg-white dark:bg-black-800 p-6 shadow-lg max-sm:data-[state=closed]:animate-out max-sm:data-[state=closed]:slide-out-to-bottom max-sm:data-[state=open]:animate-in max-sm:data-[state=open]:slide-in-from-bottom sm:rounded-lg md:w-full" +
+        "fixed max-sm:rounded-t-md max-sm:w-screen max-sm:min-h-[calc(100vh-6rem)] max-sm:left-0 max-sm:bottom-0 sm:left-[50%] sm:bottom-[50%] z-50 grid content-start w-full sm:max-w-lg sm:max-h-[calc(100vh-1rem)] sm:overflow-y-auto sm:translate-x-[-50%] sm:translate-y-[50%] gap-4 bg-neutral-background-interactive-default p-6 shadow-lg max-sm:data-[state=closed]:animate-out max-sm:data-[state=closed]:slide-out-to-bottom max-sm:data-[state=open]:animate-in max-sm:data-[state=open]:slide-in-from-bottom sm:rounded-lg md:w-full" +
         className
       }
       {...props}

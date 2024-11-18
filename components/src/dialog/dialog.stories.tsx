@@ -13,7 +13,7 @@ import { Button } from "../button/Button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/react/writing-stories/introduction
 const meta = {
-  title: "Dialog/Dialog",
+  title: "Components/Dialog",
   component: Dialog,
   decorators: [
     StoryWrapper({
@@ -47,7 +47,7 @@ export const Primary: Story = {
           consequuntur ipsum quae!
         </p>
         <Dialog>
-          <DialogTrigger>
+          <DialogTrigger asChild>
             <Button>Open</Button>
           </DialogTrigger>
           <DialogContent>
